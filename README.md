@@ -3,7 +3,7 @@
 1. `git clone` 到（ windows `~/vimfiles` 或 linux `~/.vim` ）
 
    ~~~shell
-   git clone --depth 1 git@github.com:h1m3k0/vimrc.git ~/vimfiles
+   git clone --depth 1 git@github.com:iixxn/vimrc.git ~/vimfiles
    ~~~
 
 2. 引入启动文件
@@ -47,8 +47,4 @@
    - 无插件All-In-One
      
      复制 `vim/configs/config_expample.vim` 、 `vim/setting.vim` 、 `vim/mapping.vim` 、`vim/vim.vim` 里内容
-
-
-
-​     
 
