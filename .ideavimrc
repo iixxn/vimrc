@@ -65,9 +65,12 @@ set trackactionids " 触发了action时会提示actionid(方便写IdeaAction)
 " visualdelay => (TODO)
 
 " IdeaVim Plugins
-set argtextobj " 参数文本对象 (i/a)a
-  let g:argtextobj_pairs='(:),{:},[:],<:>'
+set anyobject " (需要安装插件)很多文本对象
+  let g:anyobject_included = 'anyArgument,anyFunction,anyClass,anyItem,anyQuote'
+" set argtextobj " 参数文本对象 (i/a)a
+"  let g:argtextobj_pairs='(:),{:},[:],<:>'
 set commentary " 注释 gc
+" set dial " (需要安装插件)<C-A><C-X>额外功能(类似Switch)
 set easymotion " (需要安装插件)快速跳转
   " 智能大小写
   let g:EasyMotion_smartcase = 1
@@ -78,13 +81,13 @@ set easymotion " (需要安装插件)快速跳转
   map  <Leader><Leader>t  <Plug>(easymotion-bd-t)
   map  <Leader><Leader>T  <Plug>(easymotion-bd-t)
 set exchange " 互换 cx
-set functiontextobj " 方法文本对象(需要安装插件) (i/a)f
+" set functiontextobj " (需要安装插件)方法文本对象 (i/a)f
 set highlightedyank " 复制高亮
   let g:highlightedyank_highlight_duration = '2000'
-set textobj-indent " 缩进文本对象 (i/a)(i/I)
+" set textobj-indent " 缩进文本对象 (i/a)(i/I)
 set matchit " 百分号增强
   map M %
-" (禁用) set mini-ai " (i/a)q 引号  (i/a)b 括号
+" set mini-ai " (i/a)q 引号  (i/a)b 括号
 set multiple-curcors " 多光标
 set NERDTree " 文件树
   " 光标移动到文件树
@@ -94,24 +97,24 @@ set NERDTree " 文件树
   " 关闭/打开文件树
   nnoremap  <Leader>et  :NERDTreeToggle<CR>
 set vim-paragraph-motion " 大括号增强
-set peekaboo " 显示寄存器内容(需要安装插件)
+set peekaboo " (需要安装插件)显示寄存器内容
 set quickscope " (需要安装插件)高亮f
   let g:qs_highlight_on_keys = ['f', 'F']
   " 命令符模式不高亮
   onoremap f f
   onoremap F F
 set ReplaceWithRegister " 替换 gr
-" (禁用) set sneak " s跳转
+" set sneak " s跳转
 "   map s <Plug>Sneak_s
 "   map S <Plug>Sneak_S
 set surround " 环绕 (y/c/d)s
-set switch " 切换(需要安装插件)
+set switch " (需要安装插件)切换
   " 比如true切换false, !=切换==
   let g:switch_definitions = 'group:basic'
   nnoremap <Tab>   :Switch<CR>
   nnoremap <S-Tab> :SwitchReverse<CR>
 set textobj-entire " 全文文本对象 (i/a)e
-set which-key " 显示组合键(需要安装插件)
+set which-key " (需要安装插件)显示组合键
 
 " Basic Mappings
 " 更符合逻辑的 Y => y$
