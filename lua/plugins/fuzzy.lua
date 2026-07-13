@@ -36,7 +36,6 @@ return {
         config = function(_, opts)
             local telescope = require('telescope')
             local builtin = require('telescope.builtin')
-            telescope.setup()
             telescope.setup(opts)
 
             vim.g.telescope_input_ff = ''

@@ -79,7 +79,6 @@ if Plug('skywind3000/asynctasks.vim', v:version >= 800 && !exists('g:vscode'))  
     endif
     " 自动打开copen
     let g:asyncrun_open = 6
-    nnoremap <Leader>t :AsyncTask 
 endif
 
 PlugIf 'yianwillis/vimcdoc', !exists('g:vscode')
