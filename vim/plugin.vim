@@ -14,6 +14,9 @@ if !exists('g:vscode')
     Source vim/plugins/fuzzy.vim
     Source vim/plugins/colorscheme.vim
 endif
+if !has('nvim')
+    Source vim/plugins/coc.vim
+endif
 
 PlugIf 'folke/lazy.nvim', has('nvim')
 call plug#end()

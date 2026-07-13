@@ -1,4 +1,7 @@
 " 主题
 Plug 'sainnhe/everforest'
-call plug#load('everforest')  " 立刻加载
-colorscheme everforest
+if !has('nvim')
+    call plug#load('everforest')
+    colorscheme everforest
+    highlight CocPumSearch guibg=#2d353b gui=bold
+endif
