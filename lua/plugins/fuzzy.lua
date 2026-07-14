@@ -7,7 +7,8 @@ return {
             'nvim-lua/plenary.nvim',
             'nvim-telescope/telescope-ui-select.nvim',
             -- mingw64 make: 将 mingw32-make.exe 复制为 make.exe
-            { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+            -- { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+            { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' },
         },
         opts = {
             defaults = {
@@ -86,8 +87,8 @@ return {
             vim.keymap.set('n', '<Leader>f<Space>', '<Esc>:<C-U>Telescope ')
 
             vim.schedule(function()
-                telescope.load_extension('ui-select')
-                telescope.load_extension('fzf')
+                pcall(telescope.load_extension, 'ui-select')
+                pcall(telescope.load_extension, 'fzf')
             end)
         end,
     },
