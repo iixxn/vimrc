@@ -65,20 +65,16 @@ if Plug('neoclide/coc.nvim', !has('nvim'), {'branch': 'release'}) " coc
         endif
     endfunction
 
-    augroup IdeaVimAction
+    " 重命名
+    nmap <Leader>r <Plug>(coc-rename)
 
-        " 重命名
-        nmap <Leader>r <Plug>(coc-rename)
+    " 格式化
+    nmap <Leader>l  <Plug>(coc-format)
+    xmap <Leader>l  <Plug>(coc-format-selected)
 
-        " 格式化
-        nmap <Leader>l  <Plug>(coc-format)
-        xmap <Leader>l  <Plug>(coc-format-selected)
-
-        " 选择
-        nmap <silent> <C-S> <Plug>(coc-range-select)
-        xmap <silent> <C-S> <Plug>(coc-range-select)
-
-    augroup end
+    " 选择
+    nmap <silent> <C-S> <Plug>(coc-range-select)
+    xmap <silent> <C-S> <Plug>(coc-range-select)
 
 
     nmap <Leader>i  <Plug>(coc-codeaction-cursor)
