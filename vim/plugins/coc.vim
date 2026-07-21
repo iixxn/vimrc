@@ -12,6 +12,9 @@ if Plug('neoclide/coc.nvim', !has('nvim'), {'branch': 'release'}) " coc
                 \ 'coc-prettier',
                 \]
 
+    " 禁用 around/buffer 补全源，只保留 LSP 补全
+    autocmd BufEnter * let b:coc_disabled_sources = ['around', 'buffer', 'yank', 'lines']
+
     " Tab的实现
     inoremap <silent><expr> <Tab> 
                 \ coc#pum#visible() ? coc#pum#confirm() :
