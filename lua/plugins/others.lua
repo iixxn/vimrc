@@ -7,18 +7,16 @@ return {
         'stevearc/conform.nvim', version = '*',
     },
     {
-        {
-            'folke/trouble.nvim',
-            cond = false,
-            opts = {},
-        },
-        {
-            'rachartier/tiny-inline-diagnostic.nvim',
-            priority = 1000,
-            opts = {
-                preset = 'classic'
-            }
-        },
+        'folke/trouble.nvim',
+        cond = false,
+        opts = {},
+    },
+    {
+        'rachartier/tiny-inline-diagnostic.nvim',
+        priority = 1000,
+        opts = {
+            preset = 'classic'
+        }
     },
     {
         'akinsho/bufferline.nvim',

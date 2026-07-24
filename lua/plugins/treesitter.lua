@@ -8,6 +8,7 @@ return {
         init = function()
         end,
         config = function(_, opts)
+            require('nvim-treesitter').install { 'lua', 'vimdoc', 'markdown', 'markdown_inline' }
             -- 将git-https转为git-ssh https://github.com/who/what => git@github.com:who/what
             for _, config in pairs(require('nvim-treesitter.parsers')) do
                 if config.install_info ~= nil and config.install_info ~= nil then
@@ -21,9 +22,9 @@ return {
                 vim.api.nvim_create_autocmd("FileType", {
                     callback = function()
                       pcall(vim.treesitter.start)
-                      vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
-                      vim.wo[0][0].foldmethod = 'expr'
-                      vim.wo[0][0].foldlevel = 1000
+                      vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+                      vim.wo.foldmethod = 'expr'
+                      vim.wo.foldlevel = 1000
                     end,
                 })
             end

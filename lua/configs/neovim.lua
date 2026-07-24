@@ -53,7 +53,7 @@ vim.api.nvim_create_autocmd('TermOpen', {
 vim.keymap.set('t', '<C-w>', function()
     -- <C-W>切换窗口
     vim.api.nvim_feedkeys(
-        vim.api.nvim_replace_termcodes('<C-\\><C-n><C-w>', true, false, true),
+        vim.keycode('<C-\\><C-n><C-w>'),
         'n', true
     )
     -- 取消(停留在终端), 自动改为startinsert()
@@ -90,8 +90,8 @@ vim.api.nvim_create_autocmd('WinEnter', {
 
 
 vim.keymap.set('n', ']e', function()
-    vim.diagnostic.jump({count = 1, _highest = true})
+    vim.diagnostic.jump({count = 1, severity_bound = vim.diagnostic.severity.ERROR})
 end)
 vim.keymap.set('n', '[e', function()
-    vim.diagnostic.jump({count = -1, _highest = true})
+    vim.diagnostic.jump({count = -1, severity_bound = vim.diagnostic.severity.ERROR})
 end)

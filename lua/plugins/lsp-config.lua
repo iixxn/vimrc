@@ -6,9 +6,9 @@ return {
         dependencies = { 'williamboman/mason.nvim', 'williamboman/mason-lspconfig.nvim', },
         version = '*',
         config = function()
-            vim.lsp.inlay_hint.enable(true)
+            vim.lsp.inlay_hint.enable(0, true)
             vim.keymap.set('n', '<Leader>r', vim.lsp.buf.rename)
-            vim.keymap.set({'n','x'}, '<Leader>l', vim.lsp.buf.format)
+            vim.keymap.set({'n','x'}, '<Leader>l', function() vim.lsp.buf.format({ async = true }) end)
         end,
     },
     {
