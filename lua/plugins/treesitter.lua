@@ -9,15 +9,6 @@ return {
         end,
         config = function(_, opts)
             require('nvim-treesitter').install { 'lua', 'vimdoc', 'markdown', 'markdown_inline' }
-            -- 将git-https转为git-ssh https://github.com/who/what => git@github.com:who/what
-            for _, config in pairs(require('nvim-treesitter.parsers')) do
-                if config.install_info ~= nil and config.install_info ~= nil then
-                    config.install_info.url = config.install_info.url:gsub(
-                        "^https://([^:/]+)/",
-                        "git@%1:"
-                    )
-                end
-            end
             if not vim.g.vscode then
                 vim.api.nvim_create_autocmd("FileType", {
                     callback = function()
